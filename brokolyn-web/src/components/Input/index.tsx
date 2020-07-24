@@ -21,9 +21,9 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
     registerField({
       name: fieldName,
       ref: inputRef.current,
-      path: '',
+      path: 'value',
     });
-  }, []);
+  }, [fieldName, registerField]);
 
   return (
     <>

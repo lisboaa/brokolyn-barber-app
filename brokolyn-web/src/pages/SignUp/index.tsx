@@ -22,7 +22,7 @@ const SignIn: React.FC = () => {
 
           <Input name="email" icon={FiMail} placeholder="E-mail" />
 
-          <Input name="password" icon={FiLock} placeholder="Senha" />
+          <Input type="password" name="password" icon={FiLock} placeholder="Senha" />
 
           <Button type="submit">Cadastrar</Button>
         </Form>
