@@ -1,8 +1,8 @@
 import React, {
   InputHTMLAttributes,
-  ComponentType,
   useEffect,
   useRef,
+  useState
 } from 'react';
 import { IconBaseProps } from 'react-icons';
 import { useField } from '@unform/core';
@@ -15,6 +15,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
   const inputRef = useRef(null);
+  const [isFocused, setIsFocused] = useState(false);
   const { fieldName, registerField } = useField(name);
 
   useEffect(() => {
@@ -27,9 +28,12 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
 
   return (
     <>
-      <Container>
+      <Container isFocused={isFocused}>
         {Icon && <Icon size={20} />}
-        <input ref={inputRef} {...rest} />
+        <input
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+        ref={inputRef} {...rest} />
       </Container>
     </>
   );
