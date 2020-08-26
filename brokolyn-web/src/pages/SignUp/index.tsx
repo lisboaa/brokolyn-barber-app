@@ -9,7 +9,7 @@ import Input from '../../components/Input';
 import * as Yup from 'yup';
 import getValidationErrors from '../../utils/getValidationErrors';
 
-const SignIn: React.FC = () => {
+const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const handleSubmit = useCallback(async (data: object) => {
@@ -61,4 +61,4 @@ const SignIn: React.FC = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;
